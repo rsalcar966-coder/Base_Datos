@@ -52,7 +52,7 @@ CREATE TABLE Estudio (
     Fecha_fin DATE,
     Titulo VARCHAR(30) NOT NULL,
     Especialidad VARCHAR(30),
-    PRIMARY KEY (DNI_empl, Cod_univ, Titulo),
+    CONSTRAINT pk_estudio PRIMARY KEY (DNI_empl, Cod_univ, Titulo),
     CONSTRAINT fk_estudio_empl FOREIGN KEY (DNI_empl) REFERENCES Empleado(DNI) ON DELETE CASCADE,
     CONSTRAINT fk_estudio_univ FOREIGN KEY (Cod_univ) REFERENCES Universidad(Cod_univ)
 );
@@ -63,7 +63,7 @@ CREATE TABLE Historial_salarial (
     Salario DECIMAL(6,2) NOT NULL,
     Fecha_inicio DATE NOT NULL,
     Fecha_fin DATE,
-    PRIMARY KEY (DNI_empl, Fecha_inicio),
+    CONSTRAINT pk_historial_salarial PRIMARY KEY (DNI_empl, Fecha_inicio),
     CONSTRAINT fk_hsal_empl FOREIGN KEY (DNI_empl) REFERENCES Empleado(DNI) ON DELETE CASCADE,
     -- Restricción de fechas cronológicas
     CONSTRAINT ck_fechas_sal CHECK (Fecha_fin IS NULL OR Fecha_fin >= Fecha_inicio)
@@ -77,7 +77,7 @@ CREATE TABLE Historial_laboral (
     Fecha_inicio DATE NOT NULL,
     Fecha_fin DATE,
     DNI_super CHAR(9),
-    PRIMARY KEY (DNI_empl, Fecha_inicio),
+    CONSTRAINT pk_historial_laboral PRIMARY KEY (DNI_empl, Fecha_inicio),
     CONSTRAINT fk_hlab_empl FOREIGN KEY (DNI_empl) REFERENCES Empleado(DNI) ON DELETE CASCADE,
     CONSTRAINT fk_hlab_trab FOREIGN KEY (Cod_trabajo) REFERENCES Trabajo(Cod_trabajo),
     CONSTRAINT fk_hlab_dpto FOREIGN KEY (Cod_dpto) REFERENCES Departamento(Cod_dpto),
