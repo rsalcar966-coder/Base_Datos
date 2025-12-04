@@ -77,7 +77,7 @@ CREATE TABLE Historial_laboral (
     Fecha_inicio DATE NOT NULL,
     Fecha_fin DATE,
     DNI_super CHAR(9),
-    CONSTRAINT pk_historial_laboral PRIMARY KEY (DNI_empl, Fecha_inicio),
+    CONSTRAINT pk_historial_laboral PRIMARY KEY (DNI_empl, Cod_trabajo, Cod_dpto),
     CONSTRAINT fk_hlab_empl FOREIGN KEY (DNI_empl) REFERENCES Empleado(DNI) ON DELETE CASCADE,
     CONSTRAINT fk_hlab_trab FOREIGN KEY (Cod_trabajo) REFERENCES Trabajo(Cod_trabajo),
     CONSTRAINT fk_hlab_dpto FOREIGN KEY (Cod_dpto) REFERENCES Departamento(Cod_dpto),
