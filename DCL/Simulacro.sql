@@ -40,3 +40,6 @@ create user 'lector'@'localhost' identified by '123';
 grant insert on *.* to 'escritor'@'localhost';
 grant select on *.* to 'lector'@'localhost';
 flush privileges; -- desde tabla Salguero
+
+-- 5. Usuario lector de crear una vista que muestre toda la informacion almacenada de la practicas
+-- 6. Quitar al administrador todos los privilegios y le dajamos solo el privilegio de hacer select sobre la vista que acabamos de crear
