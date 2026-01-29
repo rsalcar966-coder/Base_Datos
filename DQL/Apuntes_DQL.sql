@@ -99,3 +99,7 @@ SELECT DATE_FORMAT(NOW(),'Hoy es %W día %d de %M del %Y');
 
 SELECT IF(1000 > 5000, 'Eres rico', 'Te aguantas');
 SELECT IF(7500 > 5000, 'Eres rico', 'Te aguantas');
+
+-- ----------------------------------WHERE----------------------------------
+
+
