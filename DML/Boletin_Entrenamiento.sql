@@ -30,5 +30,6 @@ WHERE cod_cliente NOT IN (
 -- hacerlo, para ello decide cómo va a implicar esto en el resto de tablas donde
 -- se referencia dicho ID.
 UPDATE Cuenta
-SET cod_cliente = 100
+SET cod_cliente = 255
 WHERE cod_cliente = 1;
+
